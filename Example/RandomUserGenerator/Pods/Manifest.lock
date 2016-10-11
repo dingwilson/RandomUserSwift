@@ -1,0 +1,12 @@
+PODS:
+  - RandomUserSwift (0.01)
+
+DEPENDENCIES:
+  - RandomUserSwift
+
+SPEC CHECKSUMS:
+  RandomUserSwift: 3a11b9531c3edb09b065527baa42b2fa96314fae
+
+PODFILE CHECKSUM: d2bb6edf8923fbe021b30574dd0e7be568fae639
+
+COCOAPODS: 1.1.0.rc.2
