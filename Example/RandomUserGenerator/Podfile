@@ -6,5 +6,5 @@ target 'RandomUserGenerator' do
   use_frameworks!
 
   # Pods for RandomUserGenerator
-  pod 'RandomUserSwift', '~> 0.02' 
+  pod 'RandomUserSwift', '~> 0.03' 
 end

@@ -29,7 +29,7 @@ public class RandomUser {
             if success {
                 completionHandler(true, self.user)
             }
-            
+                
             else {
                 completionHandler(false, "" as AnyObject)
             }
@@ -67,7 +67,7 @@ public class RandomUser {
                     if success {
                         completionHandler(true, self.user)
                     }
-                    
+                        
                     else {
                         completionHandler(false, "" as AnyObject)
                     }
