@@ -33,6 +33,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        randomUser.gender = "female"
+        
+        randomUser.nationality = "us"
+        
         getNewRandomUser()
     }
     

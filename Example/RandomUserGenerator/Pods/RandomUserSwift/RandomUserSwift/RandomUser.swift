@@ -10,16 +10,49 @@ import Foundation
 
 public class RandomUser {
     
+    public var gender: String!
+    public var nationality: String!
+    
     private var user: User!
+    private var url = URL(string: "http://api.randomuser.me/?format=json&noinfo")!
     
     public init() {
-        
+        self.gender = "both"
+        self.nationality = "us"
     }
     
-    public func getUser(completionHandler: @escaping (_ success: Bool, _ user: AnyObject) -> ()){
-        let url = URL(string: "http://api.randomuser.me/?format=json&nat=us&noinfo")
+    public func getUser(completionHandler: @escaping (_ success: Bool, _ user: AnyObject) -> ()) {
         
-        let task = URLSession.shared.dataTask(with: url!) { data, response, error in
+        self.createURL()
+        
+        self.getRandomUser(url: url) { (success, user) -> () in
+            if success {
+                completionHandler(true, self.user)
+            }
+            
+            else {
+                completionHandler(false, "" as AnyObject)
+            }
+        }
+    }
+    
+    private func createURL() {
+        var stringURL = "http://api.randomuser.me/?format=json&noinfo"
+        if self.gender == "female" {
+            stringURL = stringURL + "&gender=female"
+        } else if self.gender == "male" {
+            stringURL = stringURL + "&gender=male"
+        } else {
+            //Do Nothing. Either Both or Improper Response
+        }
+        
+        stringURL = stringURL + "&nat=\(self.nationality!)"
+        
+        self.url = URL(string: stringURL)!
+    }
+    
+    private func getRandomUser(url: URL, completionHandler: @escaping (_ success: Bool, _ user: AnyObject) -> ()){
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
             guard error == nil else {
                 print(error)
                 return
@@ -33,7 +66,9 @@ public class RandomUser {
                 DispatchQueue.main.async(execute: { () -> Void in
                     if success {
                         completionHandler(true, self.user)
-                    } else {
+                    }
+                    
+                    else {
                         completionHandler(false, "" as AnyObject)
                     }
                 })

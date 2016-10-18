@@ -14,7 +14,7 @@ public class RandomUser {
     public var nationality: String!
     
     private var user: User!
-    private var url = "http://api.randomuser.me/?format=json&noinfo"
+    private var url = URL(string: "http://api.randomuser.me/?format=json&noinfo")!
     
     public init() {
         self.gender = "both"
@@ -25,11 +25,11 @@ public class RandomUser {
         
         self.createURL()
         
-        self.getRandomUser(url: URL(string: self.url)!) { (success, user) -> () in
+        self.getRandomUser(url: url) { (success, user) -> () in
             if success {
                 completionHandler(true, self.user)
             }
-            
+                
             else {
                 completionHandler(false, "" as AnyObject)
             }
@@ -37,15 +37,18 @@ public class RandomUser {
     }
     
     private func createURL() {
+        var stringURL = "http://api.randomuser.me/?format=json&noinfo"
         if self.gender == "female" {
-            self.url = self.url + "&gender=female"
+            stringURL = stringURL + "&gender=female"
         } else if self.gender == "male" {
-            self.url = self.url + "&gender=male"
+            stringURL = stringURL + "&gender=male"
         } else {
             //Do Nothing. Either Both or Improper Response
         }
         
-        self.url = self.url + "&nat=\(self.nationality)"
+        stringURL = stringURL + "&nat=\(self.nationality!)"
+        
+        self.url = URL(string: stringURL)!
     }
     
     private func getRandomUser(url: URL, completionHandler: @escaping (_ success: Bool, _ user: AnyObject) -> ()){
@@ -64,7 +67,7 @@ public class RandomUser {
                     if success {
                         completionHandler(true, self.user)
                     }
-                    
+                        
                     else {
                         completionHandler(false, "" as AnyObject)
                     }
