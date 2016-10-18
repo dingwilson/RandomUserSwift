@@ -10,16 +10,46 @@ import Foundation
 
 public class RandomUser {
     
+    public var gender: String!
+    public var nationality: String!
+    
     private var user: User!
+    private var url = "http://api.randomuser.me/?format=json&noinfo"
     
     public init() {
-        
+        self.gender = "both"
+        self.nationality = "us"
     }
     
-    public func getUser(completionHandler: @escaping (_ success: Bool, _ user: AnyObject) -> ()){
-        let url = URL(string: "http://api.randomuser.me/?format=json&nat=us&noinfo")
+    public func getUser(completionHandler: @escaping (_ success: Bool, _ user: AnyObject) -> ()) {
         
-        let task = URLSession.shared.dataTask(with: url!) { data, response, error in
+        self.createURL()
+        
+        self.getRandomUser(url: URL(string: self.url)!) { (success, user) -> () in
+            if success {
+                completionHandler(true, self.user)
+            }
+            
+            else {
+                completionHandler(false, "" as AnyObject)
+            }
+        }
+    }
+    
+    private func createURL() {
+        if self.gender == "female" {
+            self.url = self.url + "&gender=female"
+        } else if self.gender == "male" {
+            self.url = self.url + "&gender=male"
+        } else {
+            //Do Nothing. Either Both or Improper Response
+        }
+        
+        self.url = self.url + "&nat=\(self.nationality)"
+    }
+    
+    private func getRandomUser(url: URL, completionHandler: @escaping (_ success: Bool, _ user: AnyObject) -> ()){
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
             guard error == nil else {
                 print(error)
                 return
@@ -33,7 +63,9 @@ public class RandomUser {
                 DispatchQueue.main.async(execute: { () -> Void in
                     if success {
                         completionHandler(true, self.user)
-                    } else {
+                    }
+                    
+                    else {
                         completionHandler(false, "" as AnyObject)
                     }
                 })
