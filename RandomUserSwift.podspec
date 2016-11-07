@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "RandomUserSwift"
-  s.version      = "0.03"
+  s.version      = "0.04"
   s.summary      = "Swift 3 Framework to Generate Random Users - An Unofficial SDK for randomuser.me"
 
   # This description is used to generate tags and improve search results.
@@ -78,7 +78,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/dingwilson/RandomUserSwift.git", :tag => "0.03" }
+  s.source       = { :git => "https://github.com/dingwilson/RandomUserSwift.git", :tag => "0.04" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

@@ -11,7 +11,7 @@ import Foundation
 public class RandomUser {
     
     public var gender: String?
-    public var nationality: String!
+    public var nationality: String?
     
     private var user: User!
     private var url = URL(string: "http://api.randomuser.me/?format=json&noinfo")!
@@ -67,7 +67,7 @@ public class RandomUser {
     private func getRandomUser(url: URL, completionHandler: @escaping (_ success: Bool, _ user: AnyObject) -> ()){
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             guard error == nil else {
-                print(error)
+                print(error!)
                 return
             }
             guard let data = data else {
