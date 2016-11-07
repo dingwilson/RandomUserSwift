@@ -10,7 +10,7 @@ import Foundation
 
 public class RandomUser {
     
-    public var gender: String!
+    public var gender: String?
     public var nationality: String!
     
     private var user: User!
@@ -38,15 +38,28 @@ public class RandomUser {
     
     private func createURL() {
         var stringURL = "http://api.randomuser.me/?format=json&noinfo"
-        if self.gender == "female" {
-            stringURL = stringURL + "&gender=female"
-        } else if self.gender == "male" {
-            stringURL = stringURL + "&gender=male"
-        } else {
-            //Do Nothing. Either Both or Improper Response
+        
+        if let gender = gender {
+            if gender == "female" {
+                stringURL = stringURL + "&gender=female"
+            } else if gender == "male" {
+                stringURL = stringURL + "&gender=male"
+            } else {
+                //Do Nothing. Either Both or Improper Response
+            }
         }
         
-        stringURL = stringURL + "&nat=\(self.nationality!)"
+        else {
+            print("Gender cannot be nil")
+        }
+        
+        if let nationality = nationality {
+            stringURL = stringURL + "&nat=\(nationality)"
+        }
+        
+        else {
+            print("Nationality cannot be nil")
+        }
         
         self.url = URL(string: stringURL)!
     }
