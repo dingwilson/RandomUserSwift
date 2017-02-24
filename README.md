@@ -91,7 +91,7 @@ You can select the gender of the users you wish to recieve. Possible selections 
 ```swift
 randomUser.nationality = "us,dk,fr,gb"
 ```
-You can select the gender of the users you wish to recieve. Possible selections include `au,br,ca,ch,de,dk,es,fi,fr,gb,ie,ir,nl,nz,tr,us`. You can select multiple nationalities by chaining them together with a comma in between. The default is `us`. 
+You can select the nationality of the users you wish to recieve. Possible selections include `au,br,ca,ch,de,dk,es,fi,fr,gb,ie,ir,nl,nz,tr,us`. You can select multiple nationalities by chaining them together with a comma in between. The default is `us`. 
 
 ```swift
 randomUser.getUser { success, user in
