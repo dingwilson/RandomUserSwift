@@ -10,7 +10,7 @@
   <img src="Assets/screenshot.gif" width="369" title="Screenshot">
 </p>
 
-RandomUserSwift is an easy to use Swift framework that provides the ability to generate Random Users and their accompanying data for your iOS application! It utilizes [randomuser.me](http://www.randomuser.me) API to generate the data.
+RandomUserSwift is an easy to use Swift framework that provides the ability to generate Random Users and their accompanying data for your Swift applications. It utilizes [randomuser.me](http://www.randomuser.me) API to generate the data.
 
 1. [Requirements](#requrements)
 2. [Integration](#integration)
@@ -30,7 +30,7 @@ RandomUserSwift is an easy to use Swift framework that provides the ability to g
 
 ## Integration
 
-####CocoaPods
+#### CocoaPods
 You can use [CocoaPods](http://cocoapods.org/) to install `RandomUserSwift`by adding it to your `Podfile`:
 ```ruby
 platform :ios, '10.0'
@@ -42,13 +42,13 @@ end
 ```
 Note: your iOS deployment target must be 10.0:
 
-####Carthage
+#### Carthage
 You can use [Carthage](https://github.com/Carthage/Carthage) to install `RandomUserSwift` by adding it to your `Cartfile`:
 ```
 github "dingwilson/RandomUserSwift"
 ```
 
-####Swift Package Manager
+#### Swift Package Manager
 You can use [The Swift Package Manager](https://swift.org/package-manager) to install `RandomUserSwift` by adding the proper description to your `Package.swift` file:
 ```swift
 import PackageDescription
@@ -64,7 +64,7 @@ let package = Package(
 
 Note: the [Swift Package Manager](https://swift.org/package-manager) is still in early design and development, for more infomation checkout its [GitHub Page](https://github.com/apple/swift-package-manager)
 
-####Manually
+#### Manually
 
 To use this library in your project manually you may:  
 
