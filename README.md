@@ -67,8 +67,6 @@ let package = Package(
 )
 ```
 
-Note: the [Swift Package Manager](https://swift.org/package-manager) is still in early design and development, for more infomation checkout its [GitHub Page](https://github.com/apple/swift-package-manager)
-
 #### Manually
 
 To use this library in your project manually you may:  
