@@ -21,7 +21,6 @@ RandomUserSwift is an easy to use Swift framework that provides the ability to g
 2. [Integration](#integration)
     - [Cocoapods](#cocoapods)
     - [Carthage](#carthage)
-    - [Swift Package Manager](#swift-package-manager)
     - [Manually](#manually)
 3. [Usage](#usage)
 4. [Example](#example)
@@ -51,20 +50,6 @@ Note: your iOS deployment target must be 10.0:
 You can use [Carthage](https://github.com/Carthage/Carthage) to install `RandomUserSwift` by adding it to your `Cartfile`:
 ```
 github "dingwilson/RandomUserSwift"
-```
-
-#### Swift Package Manager
-You can use [The Swift Package Manager](https://swift.org/package-manager) to install `RandomUserSwift` by adding the proper description to your `Package.swift` file:
-```swift
-import PackageDescription
-
-let package = Package(
-    name: "YOUR_PROJECT_NAME",
-    targets: [],
-    dependencies: [
-        .Package(url: "https://github.com/dingwilson/RandomUserSwift.git", versions: Version(1,0,0)..<Version(2, .max, .max)),
-    ]
-)
 ```
 
 #### Manually
