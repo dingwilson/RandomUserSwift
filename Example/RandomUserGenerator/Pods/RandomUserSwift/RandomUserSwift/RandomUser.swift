@@ -14,7 +14,7 @@ public class RandomUser {
     public var nationality: String!
     
     private var user: User!
-    private var url = URL(string: "http://api.randomuser.me/?format=json&noinfo")!
+    private var url = URL(string: "https://api.randomuser.me/?format=json&noinfo")!
     
     public init() {
         self.gender = "both"
@@ -37,7 +37,7 @@ public class RandomUser {
     }
     
     private func createURL() {
-        var stringURL = "http://api.randomuser.me/?format=json&noinfo"
+        var stringURL = "https://api.randomuser.me/?format=json&noinfo"
         if self.gender == "female" {
             stringURL = stringURL + "&gender=female"
         } else if self.gender == "male" {
