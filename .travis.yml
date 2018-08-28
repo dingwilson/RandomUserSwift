@@ -1,0 +1,21 @@
+osx_image: xcode9.2
+language: objective-c
+xcode_project: RandomUserSwift.xcodeproj
+
+branches:
+  only:
+    master
+
+before_install:
+  - git clone https://github.com/dingwilson/devops-ci.git
+
+script:
+  - set -o pipefail
+
+  - pod spec lint
+
+  - bundle exec danger --fail-on-errors=true
+
+after_success:
+  - export repo=dingwilson/MultiPeer
+  - source ./devops-ci/gen_jazzy_docs.sh
