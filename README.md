@@ -2,6 +2,7 @@
   <img src="Assets/banner.png" width="780" title="RandomUserSwift">
 </p>
 
+[![Build Status](https://travis-ci.org/dingwilson/RandomUserSwift.svg?branch=master)](https://travis-ci.org/dingwilson/RandomUserSwift)
 [![CocoaPods Version Status](https://img.shields.io/cocoapods/v/RandomUserSwift.svg)][podLink]
 [![Carthage compatible](https://img.shields.io/badge/Carthage-Compatible-brightgreen.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods](https://img.shields.io/cocoapods/dt/RandomUserSwift.svg)](https://cocoapods.org/pods/RandomUserSwift)
