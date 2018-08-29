@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="Assets/banner.png" width="780" title="RandomUserSwift">
+  <img src="https://github.com/dingwilson/SwiftVideoBackground/raw/master/Assets/banner.png" width="780" title="RandomUserSwift">
 </p>
 
 [![Build Status](https://travis-ci.org/dingwilson/RandomUserSwift.svg?branch=master)](https://travis-ci.org/dingwilson/RandomUserSwift)
@@ -12,7 +12,7 @@
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 <p align="center">
-  <img src="Assets/screenshot.gif" width="369" title="Screenshot">
+  <img src="https://github.com/dingwilson/SwiftVideoBackground/raw/master/Assets/screenshot.gif" width="369" title="Screenshot">
 </p>
 
 RandomUserSwift is an easy to use Swift framework that provides the ability to generate random users and their accompanying data for your Swift applications. It utilizes [randomuser.me](https://www.randomuser.me) API to generate the data.
