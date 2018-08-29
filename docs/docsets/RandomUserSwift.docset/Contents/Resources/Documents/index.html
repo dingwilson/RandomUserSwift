@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>RandomUserSwift  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="RandomUserSwift  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">RandomUserSwift Docs</a> (80% documented)</p>
+        <p class="header-right"><a href="https://github.com/dingwilson/RandomUserSwift"><img src="img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">RandomUserSwift Reference</a>
+        <img id="carat" src="img/carat.png" />
+        RandomUserSwift  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/RandomUser.html">RandomUser</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs.html#/s:15RandomUserSwift5UsersV">Users</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <p align="center">
+  <img src="Assets/banner.png" width="780" title="RandomUserSwift">
+</p>
+
+<p><a href="https://travis-ci.org/dingwilson/RandomUserSwift"><img src="https://travis-ci.org/dingwilson/RandomUserSwift.svg?branch=master" alt="Build Status"></a>
+<a href="https://cocoapods.org/pods/RandomUserSwift"><img src="https://img.shields.io/cocoapods/v/RandomUserSwift.svg" alt="CocoaPods Version Status"></a>
+<a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-Compatible-brightgreen.svg?style=flat" alt="Carthage compatible"></a>
+<a href="https://cocoapods.org/pods/RandomUserSwift"><img src="https://img.shields.io/cocoapods/dt/RandomUserSwift.svg" alt="CocoaPods"></a>
+<a href="https://cocoapods.org/pods/RandomUserSwift"><img src="https://img.shields.io/cocoapods/dm/RandomUserSwift.svg" alt="CocoaPods"></a>
+<img src="https://img.shields.io/badge/platforms-iOS-333333.svg" alt="Platform">
+<a href="https://swift.org"><img src="https://img.shields.io/badge/Swift-4.0+-orange.svg" alt="Swift"></a>
+<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License"></a></p>
+
+<p align="center">
+  <img src="Assets/screenshot.gif" width="369" title="Screenshot">
+</p>
+
+<p>RandomUserSwift is an easy to use Swift framework that provides the ability to generate random users and their accompanying data for your Swift applications. It utilizes <a href="https://www.randomuser.me">randomuser.me</a> API to generate the data.</p>
+
+<ol>
+<li><a href="#integration">Integration</a>
+
+<ul>
+<li><a href="#cocoapods">Cocoapods</a></li>
+<li><a href="#carthage">Carthage</a></li>
+</ul></li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#license">License</a></li>
+</ol>
+<h2 id='integration' class='heading'>Integration</h2>
+<h4 id='cocoapods' class='heading'>CocoaPods</h4>
+
+<p>You can use <a href="https://cocoapods.org/">CocoaPods</a> to install <code>RandomUserSwift</code> by adding it to your <code>Podfile</code>:</p>
+<pre class="highlight ruby"><code><span class="n">target</span> <span class="s1">'MyApp'</span> <span class="k">do</span>
+    <span class="n">pod</span> <span class="s1">'RandomUserSwift'</span>
+<span class="k">end</span>
+</code></pre>
+<h4 id='carthage' class='heading'>Carthage</h4>
+
+<p>You can use <a href="https://github.com/Carthage/Carthage">Carthage</a> to install <code>RandomUserSwift</code> by adding it to your <code>Cartfile</code>:</p>
+<pre class="highlight plaintext"><code>github "dingwilson/RandomUserSwift"
+</code></pre>
+<h2 id='usage' class='heading'>Usage</h2>
+
+<p>Import the framework</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">RandomUserSwift</span>
+</code></pre>
+
+<p>Then, use the <code>getUsers</code> function via the <code>shared</code> singleton with a completion handler.</p>
+<pre class="highlight swift"><code><span class="kt">RandomUser</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">getUsers</span><span class="p">()</span> <span class="p">{</span> <span class="n">data</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+    <span class="k">guard</span> <span class="k">let</span> <span class="nv">data</span> <span class="o">=</span> <span class="n">data</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+
+    <span class="nf">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>For more information on the configuration and returned values, check out the <a href="https://wilsonding.com/RandomUserSwift">RandomUserSwift documentation</a> or <a href="https://www.randomuser.me/documentation">RandomUser official documentation</a></p>
+<h2 id='license' class='heading'>License</h2>
+
+<p><code>RandomUserSwift</code> is released under an [MIT License][mitLink]. See <code>LICENSE</code> for details.</p>
+
+<p><strong>Copyright &copy; 2016-present Wilson Ding.</strong></p>
+
+<p><em>Please provide attribution, it is greatly appreciated.</em></p>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="https://github.com/dingwilson/RandomUserSwift" target="_blank" rel="external">Wilson Ding</a>. All rights reserved. (Last updated: 2018-08-29)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
