@@ -11,7 +11,7 @@
 		C8A7AA341DAC2FE90054C75C /* RandomUserSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A7AA331DAC2FE90054C75C /* RandomUserSwiftTests.swift */; };
 		C8A7AA361DAC2FE90054C75C /* RandomUserSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A7AA281DAC2FE80054C75C /* RandomUserSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8A7AA401DAC302F0054C75C /* RandomUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A7AA3F1DAC302F0054C75C /* RandomUser.swift */; };
-		C8A7AA461DAC35FC0054C75C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A7AA451DAC35FC0054C75C /* User.swift */; };
+		C8A7AA461DAC35FC0054C75C /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A7AA451DAC35FC0054C75C /* Users.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +32,7 @@
 		C8A7AA331DAC2FE90054C75C /* RandomUserSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserSwiftTests.swift; sourceTree = "<group>"; };
 		C8A7AA351DAC2FE90054C75C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8A7AA3F1DAC302F0054C75C /* RandomUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomUser.swift; sourceTree = "<group>"; };
-		C8A7AA451DAC35FC0054C75C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C8A7AA451DAC35FC0054C75C /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +77,7 @@
 			children = (
 				C8A7AA281DAC2FE80054C75C /* RandomUserSwift.h */,
 				C8A7AA3F1DAC302F0054C75C /* RandomUser.swift */,
-				C8A7AA451DAC35FC0054C75C /* User.swift */,
+				C8A7AA451DAC35FC0054C75C /* Users.swift */,
 				C8A7AA291DAC2FE80054C75C /* Info.plist */,
 			);
 			path = RandomUserSwift;
@@ -114,6 +114,7 @@
 				C8A7AA211DAC2FE80054C75C /* Frameworks */,
 				C8A7AA221DAC2FE80054C75C /* Headers */,
 				C8A7AA231DAC2FE80054C75C /* Resources */,
+				C86C64C9213703DC0097C2AD /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -149,7 +150,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Wilson Ding";
 				TargetAttributes = {
 					C8A7AA241DAC2FE80054C75C = {
@@ -201,12 +202,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C86C64C9213703DC0097C2AD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C8A7AA201DAC2FE80054C75C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8A7AA461DAC35FC0054C75C /* User.swift in Sources */,
+				C8A7AA461DAC35FC0054C75C /* Users.swift in Sources */,
 				C8A7AA401DAC302F0054C75C /* RandomUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -243,6 +260,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -250,6 +268,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -303,6 +322,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -310,6 +330,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -360,7 +381,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -381,7 +402,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.wilsonding.RandomUserSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
