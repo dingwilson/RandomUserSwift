@@ -10,13 +10,13 @@ import Foundation
 
 /// Class that interacts with the RandomUser API to generate random users
 public class RandomUser {
-    
+
     /// Singleton
     public static let shared = RandomUser()
-    
+
     /// API Version Number
     public static var apiVersion = 1.2
-    
+
     /**
      Get one or more users from RandomUser API (https://www.randomuser.me/documentation)
      
@@ -32,11 +32,11 @@ public class RandomUser {
     public func getUsers(results: Int = 1,
                          gender: String = "both",
                          nationality: String = "",
-                         completionHandler: @escaping (_ data: Users?, _ error: Error?) -> ()) {
-        
+                         completionHandler: @escaping (_ data: Users?, _ error: Error?) -> Void) {
+
         guard let url = createUrl(results: results, gender: gender, nationality: nationality) else { return }
-        
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+
+        let task = URLSession.shared.dataTask(with: url) { data, _, error in
             guard
                 error == nil,
                 let data = data
@@ -44,17 +44,18 @@ public class RandomUser {
                 completionHandler(nil, error)
                 return
             }
-            
+
             let users = try? JSONDecoder().decode(Users.self, from: data)
 
             completionHandler(users, nil)
         }
-        
+
         task.resume()
     }
-    
+
     /// Create URL with config query parameters to use for RandomUser API
     private func createUrl(results: Int, gender: String, nationality: String) -> URL? {
+        // swiftlint:disable line_length
         return URL(string: "https://randomuser.me/api/\(RandomUser.apiVersion)/?format=json&results=\(results)&gender=\(gender)&nat=\(nationality)")
     }
 

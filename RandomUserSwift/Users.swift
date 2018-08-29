@@ -27,6 +27,7 @@ struct Result: Codable {
     let login: Login
     let dob, registered: Dob
     let phone, cell: String
+    // swiftlint:disable identifier_name
     let id: ID
     let picture: Picture
     let nat: String
@@ -38,10 +39,11 @@ struct Dob: Codable {
 }
 
 enum Gender: String, Codable {
-    case female = "female"
-    case male = "male"
+    case female
+    case male
 }
 
+// swiftlint:disable type_name
 struct ID: Codable {
     let name: String
     let value: String?
@@ -61,27 +63,29 @@ struct Coordinates: Codable {
 enum Postcode: Codable {
     case integer(Int)
     case string(String)
-    
+
     init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
-        if let x = try? container.decode(Int.self) {
-            self = .integer(x)
+        if let value = try? container.decode(Int.self) {
+            self = .integer(value)
             return
         }
-        if let x = try? container.decode(String.self) {
-            self = .string(x)
+        if let value = try? container.decode(String.self) {
+            self = .string(value)
             return
         }
+
+        // swiftlint:disable line_length
         throw DecodingError.typeMismatch(Postcode.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for Postcode"))
     }
-    
+
     func encode(to encoder: Encoder) throws {
         var container = encoder.singleValueContainer()
         switch self {
-        case .integer(let x):
-            try container.encode(x)
-        case .string(let x):
-            try container.encode(x)
+        case .integer(let value):
+            try container.encode(value)
+        case .string(let value):
+            try container.encode(value)
         }
     }
 }
@@ -101,12 +105,14 @@ struct Name: Codable {
 }
 
 enum Title: String, Codable {
-    case madame = "madame"
-    case miss = "miss"
-    case monsieur = "monsieur"
-    case mr = "mr"
-    case mrs = "mrs"
-    case ms = "ms"
+    case madame
+    case miss
+    case monsieur
+    // swiftlint:disable identifier_name
+    case mr
+    case mrs
+    // swiftlint:disable identifier_name
+    case ms
 }
 
 struct Picture: Codable {
