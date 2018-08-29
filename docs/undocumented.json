@@ -1,12 +1,12 @@
 {
   "warnings": [
     {
-      "file": "/Users/wilson/RandomUserSwift/RandomUserSwift/Users.swift",
+      "file": "/Users/travis/build/dingwilson/RandomUserSwift/RandomUserSwift/Users.swift",
       "line": 11,
       "symbol": "Users",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     }
   ],
-  "source_directory": "/Users/wilson/RandomUserSwift"
+  "source_directory": "/Users/travis/build/dingwilson/RandomUserSwift"
 }
