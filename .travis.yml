@@ -23,5 +23,7 @@ script:
   - bash <(curl -s https://codecov.io/bash)
   - bundle exec danger --fail-on-errors=true
 
-after_success:
-  - source ./devops-ci/gen_jazzy_docs.sh
+jobs:
+  include:
+    - stage: jazzy
+      script: source ./devops-ci/gen_jazzy_docs.sh
