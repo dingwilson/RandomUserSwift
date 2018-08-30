@@ -54,6 +54,8 @@
 </p>
 
 <p><a href="https://travis-ci.org/dingwilson/RandomUserSwift"><img src="https://travis-ci.org/dingwilson/RandomUserSwift.svg?branch=master" alt="Build Status"></a>
+<a href="https://codecov.io/gh/dingwilson/RandomUserSwift"><img src="https://codecov.io/gh/dingwilson/RandomUserSwift/branch/master/graph/badge.svg" alt="codecov"></a>
+<a href="https://wilsonding.com/RandomUserSwift"><img src="https://wilsonding.com/RandomUserSwift/badge.svg" alt="doccov"></a>
 <a href="https://cocoapods.org/pods/RandomUserSwift"><img src="https://img.shields.io/cocoapods/v/RandomUserSwift.svg" alt="CocoaPods Version Status"></a>
 <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-Compatible-brightgreen.svg?style=flat" alt="Carthage compatible"></a>
 <a href="https://cocoapods.org/pods/RandomUserSwift"><img src="https://img.shields.io/cocoapods/dt/RandomUserSwift.svg" alt="CocoaPods"></a>
@@ -98,7 +100,7 @@
 </code></pre>
 
 <p>Then, use the <code>getUsers</code> function via the <code>shared</code> singleton with a completion handler.</p>
-<pre class="highlight swift"><code><span class="kt">RandomUser</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">getUsers</span><span class="p">()</span> <span class="p">{</span> <span class="n">data</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+<pre class="highlight swift"><code><span class="kt">RandomUser</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="n">getUsers</span> <span class="p">{</span> <span class="n">data</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
     <span class="k">guard</span> <span class="k">let</span> <span class="nv">data</span> <span class="o">=</span> <span class="n">data</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
 
     <span class="nf">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
