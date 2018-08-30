@@ -3,6 +3,8 @@
 </p>
 
 [![Build Status](https://travis-ci.org/dingwilson/RandomUserSwift.svg?branch=master)](https://travis-ci.org/dingwilson/RandomUserSwift)
+[![codecov](https://codecov.io/gh/dingwilson/RandomUserSwift/branch/master/graph/badge.svg)](https://codecov.io/gh/dingwilson/RandomUserSwift)
+[![doccov](https://wilsonding.com/RandomUserSwift/badge.svg)](https://wilsonding.com/RandomUserSwift)
 [![CocoaPods Version Status](https://img.shields.io/cocoapods/v/RandomUserSwift.svg)](https://cocoapods.org/pods/RandomUserSwift)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-Compatible-brightgreen.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods](https://img.shields.io/cocoapods/dt/RandomUserSwift.svg)](https://cocoapods.org/pods/RandomUserSwift)

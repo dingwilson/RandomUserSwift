@@ -15,7 +15,7 @@ public class RandomUser {
     public static let shared = RandomUser()
 
     /// API Version Number
-    public static var apiVersion = 1.2
+    private static var apiVersion = 1.2
 
     /**
      Get one or more users from RandomUser API (https://www.randomuser.me/documentation)
@@ -32,7 +32,7 @@ public class RandomUser {
     public func getUsers(results: Int = 1,
                          gender: String = "both",
                          nationality: String = "",
-                         completionHandler: @escaping (_ data: Users?, _ error: Error?) -> Void) {
+                         _ completionHandler: @escaping (_ data: Users?, _ error: Error?) -> Void) {
 
         guard let url = createUrl(results: results, gender: gender, nationality: nationality) else { return }
 
@@ -46,7 +46,6 @@ public class RandomUser {
             }
 
             let users = try? JSONDecoder().decode(Users.self, from: data)
-
             completionHandler(users, nil)
         }
 
