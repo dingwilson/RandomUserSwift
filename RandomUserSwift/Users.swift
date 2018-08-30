@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Codable Struct conforming to return payload from RandomUser API call
 public struct Users: Codable {
     let results: [Result]
     let info: Info
@@ -75,8 +76,9 @@ enum Postcode: Codable {
             return
         }
 
-        // swiftlint:disable line_length
-        throw DecodingError.typeMismatch(Postcode.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for Postcode"))
+        throw DecodingError.typeMismatch(Postcode.self,
+                                         DecodingError.Context(codingPath: decoder.codingPath,
+                                                               debugDescription: "Wrong type for Postcode"))
     }
 
     func encode(to encoder: Encoder) throws {
