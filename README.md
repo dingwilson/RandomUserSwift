@@ -52,7 +52,7 @@ import RandomUserSwift
 Then, use the `getUsers` function via the `shared` singleton with a completion handler.
 
 ```swift
-RandomUser.shared.getUsers() { data, error in
+RandomUser.shared.getUsers { data, error in
     guard let data = data else { return }
 
     print(data)
