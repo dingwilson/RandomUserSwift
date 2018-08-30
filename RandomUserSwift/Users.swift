@@ -10,33 +10,33 @@ import Foundation
 
 /// Codable Struct conforming to return payload from RandomUser API call
 public struct Users: Codable {
-    let results: [Result]
-    let info: Info
+    let results: [Result]?
+    let info: Info?
 }
 
 struct Info: Codable {
-    let seed: String
-    let results, page: Int
-    let version: String
+    let seed: String?
+    let results, page: Int?
+    let version: String?
 }
 
 struct Result: Codable {
-    let gender: Gender
-    let name: Name
-    let location: Location
-    let email: String
-    let login: Login
-    let dob, registered: Dob
-    let phone, cell: String
+    let gender: Gender?
+    let name: NameClass?
+    let location: Location?
+    let email: String?
+    let login: Login?
+    let dob, registered: Dob?
+    let phone, cell: String?
     // swiftlint:disable identifier_name
-    let id: ID
-    let picture: Picture
-    let nat: String
+    let id: ID?
+    let picture: Picture?
+    let nat: String?
 }
 
 struct Dob: Codable {
-    let date: Date
-    let age: Int
+    let date: String?
+    let age: Int?
 }
 
 enum Gender: String, Codable {
@@ -46,19 +46,35 @@ enum Gender: String, Codable {
 
 // swiftlint:disable type_name
 struct ID: Codable {
-    let name: String
+    let name: NameEnum?
     let value: String?
 }
 
+enum NameEnum: String, Codable {
+    case avs = "AVS"
+    case bsn = "BSN"
+    case cpr = "CPR"
+    case dni = "DNI"
+    case empty = ""
+    // swiftlint:disable identifier_name
+    case fn = "FN"
+    case hetu = "HETU"
+    case insee = "INSEE"
+    case nino = "NINO"
+    case pps = "PPS"
+    case ssn = "SSN"
+    case tfn = "TFN"
+}
+
 struct Location: Codable {
-    let street, city, state: String
-    let postcode: Postcode
-    let coordinates: Coordinates
-    let timezone: Timezone
+    let street, city, state: String?
+    let postcode: Postcode?
+    let coordinates: Coordinates?
+    let timezone: Timezone?
 }
 
 struct Coordinates: Codable {
-    let latitude, longitude: String
+    let latitude, longitude: String?
 }
 
 enum Postcode: Codable {
@@ -75,7 +91,6 @@ enum Postcode: Codable {
             self = .string(value)
             return
         }
-
         throw DecodingError.typeMismatch(Postcode.self,
                                          DecodingError.Context(codingPath: decoder.codingPath,
                                                                debugDescription: "Wrong type for Postcode"))
@@ -93,21 +108,22 @@ enum Postcode: Codable {
 }
 
 struct Timezone: Codable {
-    let offset, description: String
+    let offset, description: String?
 }
 
 struct Login: Codable {
-    let uuid, username, password, salt: String
-    let md5, sha1, sha256: String
+    let uuid, username, password, salt: String?
+    let md5, sha1, sha256: String?
 }
 
-struct Name: Codable {
-    let title: Title
-    let first, last: String
+struct NameClass: Codable {
+    let title: Title?
+    let first, last: String?
 }
 
 enum Title: String, Codable {
     case madame
+    case mademoiselle
     case miss
     case monsieur
     // swiftlint:disable identifier_name
@@ -118,5 +134,5 @@ enum Title: String, Codable {
 }
 
 struct Picture: Codable {
-    let large, medium, thumbnail: String
+    let large, medium, thumbnail: String?
 }

@@ -3,3 +3,6 @@ warn('PR is classed as Work in Progress', sticky: false) if github.pr_title.incl
 
 # Run SwiftLint
 swiftlint.lint_files
+
+# Report any xcodebuild warnings/errors
+xcode_summary.report 'xcodebuild.json'
