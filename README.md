@@ -7,8 +7,6 @@
 [![doccov](https://wilsonding.com/RandomUserSwift/badge.svg)](https://wilsonding.com/RandomUserSwift)
 [![CocoaPods Version Status](https://img.shields.io/cocoapods/v/RandomUserSwift.svg)](https://cocoapods.org/pods/RandomUserSwift)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-Compatible-brightgreen.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![CocoaPods](https://img.shields.io/cocoapods/dt/RandomUserSwift.svg)](https://cocoapods.org/pods/RandomUserSwift)
-[![CocoaPods](https://img.shields.io/cocoapods/dm/RandomUserSwift.svg)](https://cocoapods.org/pods/RandomUserSwift)
 ![Platform](https://img.shields.io/badge/platforms-iOS-333333.svg)
 [![Swift](https://img.shields.io/badge/Swift-4.0+-orange.svg)](https://swift.org)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
@@ -64,7 +62,7 @@ For more information on the configuration and returned values, check out the [Ra
 
 ## License
 
-`RandomUserSwift` is released under an [MIT License][mitLink]. See `LICENSE` for details.
+`RandomUserSwift` is released under an [MIT License](https://opensource.org/licenses/MIT). See `LICENSE` for details.
 
 **Copyright &copy; 2016-present Wilson Ding.**
 
