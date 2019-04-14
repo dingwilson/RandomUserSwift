@@ -8,7 +8,7 @@
 [![CocoaPods Version Status](https://img.shields.io/cocoapods/v/RandomUserSwift.svg)](https://cocoapods.org/pods/RandomUserSwift)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-Compatible-brightgreen.svg?style=flat)](https://github.com/Carthage/Carthage)
 ![Platform](https://img.shields.io/badge/platforms-iOS-333333.svg)
-[![Swift](https://img.shields.io/badge/Swift-4.0+-orange.svg)](https://swift.org)
+[![Swift](https://img.shields.io/badge/Swift-5.0+-orange.svg)](https://swift.org)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 <p align="center">
