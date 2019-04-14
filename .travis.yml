@@ -16,8 +16,4 @@ script:
   - xcodebuild clean test -project RandomUserSwift.xcodeproj -scheme RandomUserSwift -configuration Debug -destination 'platform=iOS Simulator,name=iPhone XS,OS=latest' CODE_SIGN_IDENTITY=\"\" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO -enableCodeCoverage yes | XCPRETTY_JSON_FILE_OUTPUT="xcodebuild.json" xcpretty -f `xcpretty-json-formatter`
   - bash <(curl -s https://codecov.io/bash)
   - bundle exec danger --fail-on-errors=true
-
-jobs:
-  include:
-    - stage: jazzy
-      script: source ./devops-ci/gen_jazzy_docs.sh
+  - source ./devops-ci/gen_jazzy_docs.sh
