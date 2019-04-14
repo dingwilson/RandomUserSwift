@@ -128,9 +128,11 @@ enum Title: String, Codable {
     case monsieur
     // swiftlint:disable identifier_name
     case mr
+    // swiftlint:enable identifier_name
     case mrs
     // swiftlint:disable identifier_name
     case ms
+    // swiftlint:enable identifier_name
 }
 
 struct Picture: Codable {
